@@ -73,9 +73,6 @@ yolov8project/
 │       └── images/
 │           └── fall.jpg          # Saved fall frame
 │
-├── logs/
-│   ├── latest_fall.json          # Latest fall event
-│   └── fall_history.csv          # All detected falls
 │
 ├── data/                         # Input videos (optional)
 ├── yolov8s-pose.pt               # Pretrained YOLOv8 pose weights
@@ -143,11 +140,11 @@ Place your trained model here:
 models/fall_lstm.pt
 ```
 
-> ⚠️ Without these weights, inference will not work.
+>  Without these weights, inference will not work.
 
 ---
 
-## ▶️ Running the Project (Inference)
+##  Running the Project (Inference)
 
 ### Terminal 1 — Start the Web Alert Server
 
@@ -178,7 +175,7 @@ VIDEO_SOURCE = 0
 
 ---
 
-## 🚨 What Happens When a Fall Is Detected
+##  What Happens When a Fall Is Detected
 
 * The video **freezes** on the fall frame
 * Fall velocity (m/s) is computed
@@ -192,7 +189,7 @@ VIDEO_SOURCE = 0
 
 ---
 
-## 🌐 Alert Dashboard
+##  Alert Dashboard
 
 The web UI shows:
 
@@ -208,22 +205,7 @@ Accessible at:
 http://127.0.0.1:5000
 ```
 
----
 
-## 📝 Logs & Evidence
-
-All falls are stored persistently:
-
-* `logs/latest_fall.json` → latest event (used by UI)
-* `logs/fall_history.csv` → complete history
-
-This enables:
-
-* Auditing
-* Medical reporting
-* Future analytics
-
----
 
 ## ⚙️ Optional: Training the LSTM (Advanced)
 
