@@ -1,5 +1,4 @@
 
-```markdown
 # 🚨 AI-Based Fall Detection System (YOLOv8-Pose + LSTM)
 
 This project implements a **real-time fall detection system** using computer vision and deep learning.  
