@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fall Detection Alert</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0b1220;
+        color: #e5e7eb;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .container {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #ef4444;
+        letter-spacing: 1px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #111827;
+        border-radius: 14px;
+        padding: 25px;
+        box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+    }
+
+    .card h2 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #93c5fd;
+    }
+
+    .big-value {
+        font-size: 46px;
+        font-weight: bold;
+        color: #22c55e;
+    }
+
+    .unit {
+        font-size: 18px;
+        color: #9ca3af;
+    }
+
+    .status {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #ef4444;
+    }
+
+    .severity {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .LOW { background: #14532d; color: #86efac; }
+    .MODERATE { background: #78350f; color: #fde68a; }
+    .HIGH { background: #7f1d1d; color: #fecaca; }
+
+    img {
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid #374151;
+    }
+
+    .details p {
+        font-size: 17px;
+        margin: 10px 0;
+        color: #d1d5db;
+    }
+
+    footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #6b7280;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🚨 FALL DETECTION ALERT 🚨</h1>
+
+    <div class="grid">
+
+        <!-- LEFT: IMAGE -->
+        <div class="card">
+            <h2>Captured Frame</h2>
+            <img src="{{ url_for('static', filename='images/fall.jpg') }}">
+        </div>
+
+        <!-- RIGHT: DETAILS -->
+        <div class="card">
+            <h2>Fall Metrics</h2>
+
+            <div class="big-value">
+                {{ velocity }} <span class="unit">m/s</span>
+            </div>
+
+            <div class="status">{{ status }}</div>
+
+            <div class="severity {{ severity }}">
+                Severity: {{ severity }}
+            </div>
+
+            <div class="details">
+                <p><b>Time:</b> {{ time }}</p>
+                <p><b>System:</b> YOLOv8-Pose + LSTM</p>
+                <p><b>Action:</b> Immediate Attention Required</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Fall Detection System • Real-time AI Monitoring
+    </footer>
+</div>
+
+</body>
+</html>
+
